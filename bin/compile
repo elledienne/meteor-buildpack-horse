@@ -64,6 +64,8 @@ if [ ! -d "$APP_SOURCE_DIR/.meteor" ]; then
   exit 1
 fi
 
+APP_RELEASE=`cat "$APP_SOURCE_DIR/.meteor/release?release=$APP_RELEASE" | sed -e 's/METEOR@//'`
+
 # Where we will install meteor. Has to be outside the APP_CHECKOUT_DIR.
 METEOR_DIR="$CACHE_DIR/meteor"
 # Where we'll put things we compile.
